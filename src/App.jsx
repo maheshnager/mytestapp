@@ -38,7 +38,7 @@ function App() {
     setOpenDrawer(false);
   };
 
-  // filtter
+  // filtter(search)
 
   const [filterText, setFilterText] = useState(""); // State variable for filter text
   const [filteredRows, setFilteredRows] = useState(allLeads || []);
@@ -154,7 +154,11 @@ function App() {
                 </Box>
               </Box>
 
-              <AgGridReact rowData={filteredRows || []} columnDefs={colDefs} />
+              <AgGridReact
+                pagination={true}
+                rowData={filteredRows || []}
+                columnDefs={colDefs}
+              />
             </div>
             <Drawer
               anchor="right"
